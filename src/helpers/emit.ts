@@ -1,20 +1,17 @@
-import InterfaceDataResponse from "../interface/data";
+import InterfaceDataResponse from "../interface/heart_rate";
 
 export const emitSocket = (data: any) => {
-    console.log("Recibiendo datos:", data);  // Esto te ayudará a inspeccionar la estructura
 
-    // Verifica si data.BPM existe y es un número
-    if (data && typeof data.BPM === 'number') {
+    if (data && typeof data.ECG === 'number') {
         const send: Array<InterfaceDataResponse> = [
             { 
-                datos: 'Frecuencia Cardiaca', 
-                informacion: data.BPM  // Aquí aseguramos que estamos pasando el número
+                datos: 'Ritmo Cardiaco', 
+                informacion: data.ECG  
             }
         ];
-        console.log("Datos enviados:", send);
         return send;
     } else {
-        console.error('Error: la propiedad "BPM" es undefined o no es un número');
+        console.error('Error: la propiedad "ECG" es undefined o no es un número');
         return [];
     }
 };
