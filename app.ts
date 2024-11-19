@@ -44,6 +44,13 @@ io.on("connection", (socket) => {
     io.emit("oximeter", data); // Reenvía los datos a los clientes
   });
 
+  // Listener para datos del acelerómetro
+  socket.on("acelerometerData", (data) => {
+    console.log("[Evento: acelerometerData] Datos recibidos:");
+    console.log(data);
+    io.emit("acelerometer", data); // Reenvía los datos del acelerómetro a los clientes
+  });
+
   socket.on("disconnect", () => {
     console.log("Un cliente se ha desconectado");
   });
