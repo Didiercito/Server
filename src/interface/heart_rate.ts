@@ -1,4 +1,3 @@
 export default interface HeartRateResponse {
-    datos: string;
-    informacion: string;
+    heart_rate: number;
 }

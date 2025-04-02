@@ -5,8 +5,7 @@ export const emitSocket = (data: any) => {
     if (data && typeof data.ECG === 'number') {
         const send: Array<InterfaceDataResponse> = [
             { 
-                datos: 'Ritmo Cardiaco', 
-                informacion: data.ECG  
+                heart_rate: data.ECG  
             }
         ];
         return send;

@@ -4,8 +4,7 @@ export const emitBodyTemperatureSocket = (data: any) => {
     if (data && typeof data.valor === "number") {
         const send: Array<BodyTemperatureResponse> = [
             {
-                datos: "Temperatura Corporal",
-                informacion: data.valor,
+                temperature: data.valor,
             },
         ];
         console.log("Datos enviados (BodyTemperature):", send);

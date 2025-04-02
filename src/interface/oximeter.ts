@@ -1,4 +1,3 @@
 export default interface OximeterResponse {
-    datos: string;
-    informacion: string;
+    oxygen_level: number;
 }
